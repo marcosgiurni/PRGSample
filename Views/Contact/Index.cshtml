@@ -1,0 +1,27 @@
+@model PRGSample.Models.Message
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<h3>Send a message</h3>
+
+@using (Html.BeginForm("Send", "Contact", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Content)
+        @Html.TextAreaFor(m => m.Content, new { @class = "form-control", rows = 5 })
+        @Html.ValidationMessageFor(m => m.Content)
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+}

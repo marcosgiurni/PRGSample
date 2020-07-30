@@ -1,0 +1,10 @@
+@model PRGSample.Models.MessageConfirmationViewModel
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<p>Thank you, <b>@Model.Name</b>! Your message has been sent successfully!</p>
+<p>We will send a reply to your e-mail (<b>@Model.Email</b>) as soon as possible.</p>
+
+@Html.ActionLink("Go Back to Home", "Index", "Home", null, new { @class = "btn btn-primary" })
